@@ -1,3 +1,5 @@
+# Ryan Gliever, 2015
+
 from string import punctuation
 import re
 
@@ -43,14 +45,22 @@ def find_combos(words, combo, k, start, end, index):
 
 # creates the word array given the rules (removes words <4 characters and
 # all punctuation)
-def create_word_array(sentence):
-    sentence = re.sub('['+punctuation+']', ' ', sentence).lower()
-    words = re.sub(r'\b\w{1,3}\b', '', sentence).split()
+def create_word_array(text):
+    text = re.sub('['+punctuation+']', ' ', text).lower()
+    words = re.sub(r'\b\w{1,3}\b', '', text).split()
     return words
 
 def main():
-    sentence = "Happy eaters always heat their yappers."
-    words = create_word_array(sentence)
+    # user input!
+    text = "Happy eaters always heat their yappers."
+    print("Default text:\n\t" + text)
+    user_text = input("Enter some text to check it for default or press"
+        + "enter to use the default text:\n")
+    if user_text:
+        words = create_word_array(user_text)
+    else:
+        words = create_word_array(text)
+
     if len(words) < 4:
         print("The sentence does not have enough words more than 3 characters!")
     else:
