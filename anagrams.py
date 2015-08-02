@@ -11,7 +11,7 @@ def check_pair(pairA, pairB):
         stringA = pairA[0] + pairA[1]
         stringB = pairB[0] + pairB[1]
         if len(stringA) == len(stringB) and sorted(stringA) == sorted(stringB):
-            print("!!! ANAGRAM: %s %s and %s %s"
+            print("ANAGRAM: %s %s and %s %s"
             %(pairA[0],pairA[1],pairB[0],pairB[1]))
     return
 
@@ -54,7 +54,7 @@ def main():
     # user input!
     text = "Happy eaters always heat their yappers."
     print("Default text:\n\t" + text)
-    user_text = input("Enter some text to check it for default or press"
+    user_text = input("Enter some text to check it for anagrams or press "
         + "enter to use the default text:\n")
     if user_text:
         words = create_word_array(user_text)
@@ -62,7 +62,7 @@ def main():
         words = create_word_array(text)
 
     if len(words) < 4:
-        print("The sentence does not have enough words more than 3 characters!")
+        print("The text does not have enough words more than 3 characters!")
     else:
         k = 4
         combo = [None]*k
