@@ -32,10 +32,7 @@ def check_anagrams(combo):
 def find_combos(words, combo, k, start, end, index):
     if index==k:
         # one of the combinations
-        for w in combo:
-            print("%s " %w, end="")
-        print("") #newline
-        #check the combo for an anagram
+        # check the combo for an anagram
         check_anagrams(combo)
         return
     i = start
